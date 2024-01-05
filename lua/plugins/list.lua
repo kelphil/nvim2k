@@ -19,7 +19,7 @@ return {
         'lukas-reineke/indent-blankline.nvim',
         config = load_config('ui.indentline'),
         main = 'ibl',
-        event = { 'BufReadPre', 'BufNewFile' },
+        --event = { 'BufReadPre', 'BufNewFile' },
     },
     {
         'HiPhish/rainbow-delimiters.nvim',
