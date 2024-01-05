@@ -7,8 +7,7 @@ return {
     {
       "catppuccin/nvim",
       config = load_config('ui.catppuccin'),
-      lazy = false,
-      priority = 1000,
+      lazy = true,
     },
     {
         'navarasu/onedark.nvim',
