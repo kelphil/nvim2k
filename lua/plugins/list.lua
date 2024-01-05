@@ -5,15 +5,15 @@ end
 return {
     -- UI
     {
-      "catppuccin/nvim",
-      config = load_config('ui.catppuccin'),
-      lazy = true,
-    },
-    {
         'navarasu/onedark.nvim',
         config = load_config('ui.onedark'),
         lazy = false,
         priority = 1000,
+    },
+    {
+      "catppuccin/nvim",
+      config = load_config('ui.catppuccin'),
+      lazy = false,
     },
     {
         'nvim-lualine/lualine.nvim',

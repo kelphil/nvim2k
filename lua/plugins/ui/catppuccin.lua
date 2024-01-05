@@ -9,5 +9,3 @@ catppuccin.setup({
       vim.cmd.colorscheme "catppuccin"
     end
 })
-
-catppuccin.load()
