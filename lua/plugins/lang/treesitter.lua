@@ -6,7 +6,7 @@ end
 local textobjects = require('plugins.lang.textobjects')
 
 configs.setup({
-    ensure_installed = { 'vimdoc', 'lua', 'markdown' }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+    ensure_installed = { 'bash', 'c', 'cpp', 'vimdoc', 'lua', 'markdown', 'python', 'javascript', 'json', 'make', 'yaml' }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
     sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
     ignore_install = { '' }, -- List of parsers to ignore installing
     auto_install = true,

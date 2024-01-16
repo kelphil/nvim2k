@@ -130,14 +130,24 @@ return {
 
     -- LSP
     {
+        "neovim/nvim-lspconfig",
+        dependencies = {
+            "VonHeikemen/lsp-zero.nvim",
+            "nvim-telescope/telescope.nvim",
+            "hrsh7th/cmp-nvim-lsp",
+            "williamboman/mason.nvim",
+            "williamboman/mason-lspconfig.nvim",
+        },
+        config = load_config("lang.lsp"),
+        event = { "BufReadPre", "BufNewFile" },
+    },
+    {
         "VonHeikemen/lsp-zero.nvim",
         branch = "v3.x",
         dependencies = {
-            "neovim/nvim-lspconfig",
-            "williamboman/mason-lspconfig.nvim",
+            "folke/neodev.nvim",
         },
         config = load_config("lang.lsp-zero"),
-        event = { "BufReadPre", "BufNewFile" },
     },
     {
         "folke/neodev.nvim",
