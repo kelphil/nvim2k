@@ -116,7 +116,7 @@ return {
 	-- 	"folke/trouble.nvim",
 	-- 	dependencies = "nvim-tree/nvim-web-devicons",
 	-- 	config = load_config("lang.trouble"),
- --        event = { "BufReadPre" },
+	--        event = { "BufReadPre" },
 	-- },
 
 	-- Tresitter
@@ -379,9 +379,20 @@ return {
 		-- },
 		dependencies = {
 			"nvim-lua/plenary.nvim",
-            "hrsh7th/nvim-cmp",
+			"hrsh7th/nvim-cmp",
 		},
 		config = load_config("tools.obsidian"),
+	},
+	{
+		"HakonHarnes/img-clip.nvim",
+		event = "BufEnter",
+		opts = {
+			default = {
+                dir_path = "assets/images", -- directory path to save images to, can be relative (cwd or current file) or absolute
+				file_name = "%Y-%m-%d-%H-%M-%S", -- file name format (see lua.org/pil/22.1.html)
+				prompt_for_file_name = false, -- ask user for file name before saving, leave empty to use default
+			},
+		},
 	},
 	-- {
 	-- 	"kndndrj/nvim-dbee",

@@ -283,7 +283,8 @@ local mappings = {
     n = {
         name = icons.ui.Note .. 'Notes',
         c = { '<cmd>Telekasten show_calendar<cr>', 'Calendar' },
-        d = { '<cmd>vsplit || Telekasten goto_today<cr>', 'Daily' },
+        -- d = { '<cmd>vsplit || Telekasten goto_today<cr>', 'Daily' },
+        d = { '<cmd>vsplit || ObsidianToday<cr>', 'Daily Obs' },
         D = { '<cmd>Todos<cr>', 'Pending Todos' },
         f = { '<cmd>Telekasten find_notes<cr>', 'Find Notes' },
         F = { '<cmd>Telekasten follow_link<cr>', 'Follow Link' },
@@ -317,6 +318,9 @@ local mappings = {
             'New Zettelkasten',
         },
         Z = { "<cmd>execute 'e '.strftime(\"%F-%H-%M\").'.md' <cr>", 'New Zettelkasten Here' },
+    },
+    p = {
+            { "<cmd>PasteImage<cr>", "Paste Image" },
     },
     r = {
         name = icons.diagnostics.Hint .. 'Refactor',
