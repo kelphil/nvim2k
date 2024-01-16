@@ -116,6 +116,7 @@ return {
 		"folke/trouble.nvim",
 		dependencies = "nvim-tree/nvim-web-devicons",
 		config = load_config("lang.trouble"),
+        event = { "BufReadPre" },
 	},
 
 	-- Tresitter
@@ -174,7 +175,7 @@ return {
 		opts = {
 			ensure_installed = {
 				"mypy",
-				"ruff",
+				-- "ruff",
 				"pyright",
 			},
 		},
