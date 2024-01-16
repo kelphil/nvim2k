@@ -25,8 +25,8 @@ return {
     {
         "lukas-reineke/indent-blankline.nvim",
         config = load_config("ui.indentline"),
-        main = "ibl",
-        --event = { 'BufReadPre', 'BufNewFile' },
+        -- main = "ibl",
+        -- event = { 'BufReadPre', 'BufNewFile' },
     },
     {
         "HiPhish/rainbow-delimiters.nvim",
@@ -177,6 +177,7 @@ return {
             "hrsh7th/cmp-nvim-lsp-signature-help",
             "hrsh7th/cmp-nvim-lua",
             "saadparwaiz1/cmp_luasnip",
+            "rafamadriz/friendly-snippets",
         },
         config = load_config("lang.cmp"),
         event = "InsertEnter",
@@ -202,7 +203,7 @@ return {
         "MeanderingProgrammer/harpoon-core.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
         config = load_config("tools.harpoon"),
-        event = { "BufReadPre"},
+        event = { "BufReadPre" },
     },
     {
         "nvim-tree/nvim-tree.lua",
