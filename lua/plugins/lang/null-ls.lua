@@ -24,6 +24,7 @@ null_ls.setup({
         diagnostics.shellcheck,
         formatting.prettier,
         formatting.shfmt,
+        formatting.stylua,
         hover.dictionary,
         hover.printenv,
         -- diagnostics.cspell.with({

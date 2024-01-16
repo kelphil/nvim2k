@@ -273,11 +273,11 @@ local mappings = {
     },
     m = {
         name = icons.ui.Bookmark .. 'Marks',
-        a = { '<cmd>lua require("harpoon.mark").add_file()<cr>', 'Harpoon' },
-        m = { '<cmd>Telescope harpoon marks<cr>', 'Search Files' },
-        ['k'] = { '<cmd>lua require("harpoon.ui").nav_next()<cr>', 'Harpoon Next' },
-        ['j'] = { '<cmd>lua require("harpoon.ui").nav_prev()<cr>', 'Harpoon Prev' },
-        ['s'] = { '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', 'Harpoon UI' },
+        a = { '<cmd>lua require("harpoon-core.mark").add_file()<cr>', 'Harpoon' },
+        s = { '<cmd>Telescope harpoon-core marks<cr>', 'Search Files' },
+        ['k'] = { '<cmd>lua require("harpoon-core.ui").nav_next()<cr>', 'Harpoon Next' },
+        ['j'] = { '<cmd>lua require("harpoon-core.ui").nav_prev()<cr>', 'Harpoon Prev' },
+        ['m'] = { '<cmd>lua require("harpoon-core.ui").toggle_quick_menu()<cr>', 'Harpoon UI' },
     },
     n = {
         name = icons.ui.Note .. 'Notes',
