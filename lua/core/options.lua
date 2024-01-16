@@ -20,7 +20,7 @@ local options = {
     ignorecase = true, -- ignore case in search patterns
     inccommand = 'split', -- preview incremental substitute
     laststatus = 3,
-    list = true,
+    list = false,
     listchars = { trail = '', tab = '', nbsp = '_', extends = '>', precedes = '<' }, -- highlight
     mouse = 'a', -- allow the mouse to be used in neovim
     number = true, -- set numbered lines

@@ -78,12 +78,12 @@ return {
 	},
 
 	-- Language
-	{
-		"weizheheng/ror.nvim",
-		branch = "main",
-		ft = "ruby",
-	},
-	{ "tpope/vim-rails", ft = "ruby" },
+	-- {
+	-- 	"weizheheng/ror.nvim",
+	-- 	branch = "main",
+	-- 	ft = "ruby",
+	-- },
+	-- { "tpope/vim-rails", ft = "ruby" },
 	{
 		"mfussenegger/nvim-dap",
 		dependencies = {
@@ -112,12 +112,12 @@ return {
 		"ThePrimeagen/refactoring.nvim",
 		config = load_config("lang.refactoring"),
 	},
-	{
-		"folke/trouble.nvim",
-		dependencies = "nvim-tree/nvim-web-devicons",
-		config = load_config("lang.trouble"),
-        event = { "BufReadPre" },
-	},
+	-- {
+	-- 	"folke/trouble.nvim",
+	-- 	dependencies = "nvim-tree/nvim-web-devicons",
+	-- 	config = load_config("lang.trouble"),
+ --        event = { "BufReadPre" },
+	-- },
 
 	-- Tresitter
 	{
@@ -186,7 +186,7 @@ return {
 		"nvimtools/none-ls.nvim",
 		dependencies = { "neovim/nvim-lspconfig" },
 		config = load_config("lang.null-ls"),
-		event = { "BufReadPre", "BufNewFile" },
+		event = "LspAttach",
 	},
 
 	-- Completion
@@ -212,14 +212,14 @@ return {
 		build = "make install_jsregexp",
 		event = "InsertEnter",
 	},
-	{
-		"zbirenbaum/copilot.lua",
-		dependencies = {
-			"zbirenbaum/copilot-cmp",
-		},
-		config = load_config("lang.copilot"),
-		event = "InsertEnter",
-	},
+	-- {
+	-- 	"zbirenbaum/copilot.lua",
+	-- 	dependencies = {
+	-- 		"zbirenbaum/copilot-cmp",
+	-- 	},
+	-- 	config = load_config("lang.copilot"),
+	-- 	event = "InsertEnter",
+	-- },
 
 	-- Tools
 	{
@@ -333,14 +333,14 @@ return {
 			end
 		end,
 	},
-	{
-		"m4xshen/hardtime.nvim",
-		dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
-		config = function()
-			require("hardtime").setup({ enabled = true })
-		end,
-		cmd = "Hardtime",
-	},
+	-- {
+	-- 	"m4xshen/hardtime.nvim",
+	-- 	dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+	-- 	config = function()
+	-- 		require("hardtime").setup({ enabled = true })
+	-- 	end,
+	-- 	cmd = "Hardtime",
+	-- },
 	{
 		"chrisgrieser/nvim-spider",
 		config = load_config("tools.spider"),
@@ -379,21 +379,22 @@ return {
 		-- },
 		dependencies = {
 			"nvim-lua/plenary.nvim",
+            "hrsh7th/nvim-cmp",
 		},
-		opts = {},
+		config = load_config("tools.obsidian"),
 	},
-	{
-		"kndndrj/nvim-dbee",
-		dependencies = {
-			"MunifTanjim/nui.nvim",
-		},
-		build = function()
-			--    "curl", "wget", "bitsadmin", "go"
-			require("dbee").install("curl")
-		end,
-		config = load_config("tools.dbee"),
-		cmd = "DBToggle",
-	},
+	-- {
+	-- 	"kndndrj/nvim-dbee",
+	-- 	dependencies = {
+	-- 		"MunifTanjim/nui.nvim",
+	-- 	},
+	-- 	build = function()
+	-- 		--    "curl", "wget", "bitsadmin", "go"
+	-- 		require("dbee").install("curl")
+	-- 	end,
+	-- 	config = load_config("tools.dbee"),
+	-- 	cmd = "DBToggle",
+	-- },
 	{
 		"akinsho/toggleterm.nvim",
 		config = load_config("tools.toggleterm"),
@@ -424,11 +425,11 @@ return {
 	},
 
 	-- Git
-	{
-		"2kabhishek/co-author.nvim",
-		dependencies = { "stevearc/dressing.nvim" },
-		cmd = "CoAuthor",
-	},
+	-- {
+	-- 	"2kabhishek/co-author.nvim",
+	-- 	dependencies = { "stevearc/dressing.nvim" },
+	-- 	cmd = "CoAuthor",
+	-- },
 	{
 		"ruifm/gitlinker.nvim",
 		config = load_config("tools.gitlinker"),
