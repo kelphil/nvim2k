@@ -1,6 +1,6 @@
-local status_ok, null_ls = pcall(require, 'null-ls')
+local status_ok, null_ls = pcall(require, "null-ls")
 if not status_ok then
-    return
+	return
 end
 
 local formatting = null_ls.builtins.formatting
@@ -12,34 +12,35 @@ local completion = null_ls.builtins.completion
 -- Buily in sources: https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md
 
 null_ls.setup({
-    debug = false,
-    border = 'rounded',
-    log_level = 'info',
-    diagnostics_format = '#{c} #{m} (#{s})',
-    sources = {
-        code_actions.refactoring,
-        code_actions.shellcheck,
-        completion.spell,
-        completion.tags,
-        diagnostics.shellcheck,
-        formatting.prettier,
-        formatting.shfmt,
-        formatting.stylua,
-        hover.dictionary,
-        hover.printenv,
-        -- diagnostics.cspell.with({
-        --     {
-        --         disabled_filetypes = { "lua" },
-        --         filetypes = { "html", "json", "yaml", "markdown" },
-        --         extra_args = { "--config ~/.cspell.json" },
-        --     },
-        -- }),
-        -- code_actions.cspell.with({
-        --     {
-        --         disabled_filetypes = { 'lua' },
-        --         filetypes = { 'html', 'json', 'yaml', 'markdown' },
-        --         extra_args = { '--config ~/.cspell.json' },
-        --     },
-        -- }),
-    },
+	debug = false,
+	border = "rounded",
+	log_level = "info",
+	diagnostics_format = "#{c} #{m} (#{s})",
+	sources = {
+		code_actions.refactoring,
+		code_actions.shellcheck,
+		completion.spell,
+		completion.tags,
+		diagnostics.shellcheck,
+		formatting.black,
+		formatting.prettier,
+		formatting.shfmt,
+		formatting.stylua,
+		hover.dictionary,
+		hover.printenv,
+		-- diagnostics.cspell.with({
+		--     {
+		--         disabled_filetypes = { "lua" },
+		--         filetypes = { "html", "json", "yaml", "markdown" },
+		--         extra_args = { "--config ~/.cspell.json" },
+		--     },
+		-- }),
+		-- code_actions.cspell.with({
+		--     {
+		--         disabled_filetypes = { 'lua' },
+		--         filetypes = { 'html', 'json', 'yaml', 'markdown' },
+		--         extra_args = { '--config ~/.cspell.json' },
+		--     },
+		-- }),
+	},
 })
