@@ -3,7 +3,7 @@ if not status_ok then
     return
 end
 
-wilder.setup({ modes = { ':', '/', '?' } })
+wilder.setup({ modes = { '?' } })
 
 wilder.set_option('pipeline', {
     wilder.branch(
