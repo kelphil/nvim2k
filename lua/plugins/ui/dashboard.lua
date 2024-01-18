@@ -51,7 +51,7 @@ dashboard.setup({
             {
                 desc = icons.ui.Note .. 'Notes',
                 group = 'Label',
-                action = 'Telekasten goto_today',
+                action = 'ObsidianQuickSwitch',
                 key = 'n',
             },
             {
