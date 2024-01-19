@@ -489,10 +489,10 @@ return {
 		"tpope/vim-fugitive",
 		cmd = "Git",
 	},
-	{
-		"pwntester/octo.nvim",
-		config = load_config("tools.octo"),
-		cmd = "Octo",
-		opts = true,
-	},
+	-- {
+	-- 	"pwntester/octo.nvim",
+	-- 	config = load_config("tools.octo"),
+	-- 	cmd = "Octo",
+	-- 	opts = true,
+	-- },
 }

@@ -14,6 +14,7 @@ gitlinker.setup({
     print_url = true,
   },
   callbacks = {
+        ["github.amd.com"] = require"gitlinker.hosts".get_github_type_url,
         ["github.com"] = require"gitlinker.hosts".get_github_type_url,
         ["gitlab.com"] = require"gitlinker.hosts".get_gitlab_type_url,
         ["try.gitea.io"] = require"gitlinker.hosts".get_gitea_type_url,
