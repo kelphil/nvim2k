@@ -123,12 +123,12 @@ return {
 		config = load_config("lang.neotest"),
 		cmd = "Neotest",
 	},
-	{
-		"michaelb/sniprun",
-		build = "bash ./install.sh",
-		config = load_config("lang.sniprun"),
-		cmd = "SnipRun",
-	},
+	-- {
+	-- 	"michaelb/sniprun",
+	-- 	build = "bash ./install.sh",
+	-- 	config = load_config("lang.sniprun"),
+	-- 	cmd = "SnipRun",
+	-- },
 	{
 		"ThePrimeagen/refactoring.nvim",
 		config = load_config("lang.refactoring"),
