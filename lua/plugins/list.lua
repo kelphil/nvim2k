@@ -243,6 +243,12 @@ return {
 	-- },
 
 	-- Tools
+    {
+        "dhruvmanila/browser-bookmarks.nvim",
+        dependencies = {
+            "nvim-telescope/telescope.nvim",
+        },
+    },
 	{
 		"MeanderingProgrammer/harpoon-core.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
