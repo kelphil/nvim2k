@@ -47,11 +47,14 @@ local options = {
     tabstop = 4, -- insert 2 spaces for a tab
     termguicolors = true, -- set term gui colors (most terminals support this)
     timeoutlen = 300, -- time to wait for a mapped sequence to complete (in milliseconds)
+    -- title = true,
+    -- titlestring = '%F',
     undofile = true, -- enable persistent undo
     undolevels = 10000,
     updatetime = 200, -- faster completion (4000ms default)
     wildmenu = true, -- wildmenu
     wildmode = 'longest:full,full', -- Command-line completion mode
+    -- winbar = "%=%m %f",
     winminwidth = 5, -- Minimum window width
     wrap = false, -- display lines as one long line
     writebackup = false, -- do not edit backups
