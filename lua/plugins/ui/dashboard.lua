@@ -55,6 +55,12 @@ dashboard.setup({
                 key = 'n',
             },
             {
+                desc = icons.ui.Bookmark .. 'Links',
+                group = 'Label',
+                action = 'Telescope bookmarks',
+                key = 'l',
+            },
+            {
                 desc = icons.ui.Power,
                 group = 'Action',
                 action = 'quit',
