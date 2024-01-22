@@ -57,14 +57,14 @@ vim.api.nvim_set_keymap(
 
 -- Find and Replace
 vim.api.nvim_create_user_command("FindAndReplace", function(opts)
-  vim.api.nvim_command(string.format("cdo %%s/%s/%s", opts.fargs[1], opts.fargs[2]))
-  vim.api.nvim_command("cfdo update")
+	vim.api.nvim_command(string.format("cdo %%s/%s/%s", opts.fargs[1], opts.fargs[2]))
+	vim.api.nvim_command("cfdo update")
 end, { nargs = "*" })
 
+vim.api.nvim_set_keymap("n", "<leader>ir", ":FindAndReplace ", { noremap = true })
 
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>ir",
-  ":FindAndReplace ",
-  { noremap = true }
-)
+-- Create user command for loading Obsidian
+vim.api.nvim_create_user_command("Obsidian", function()
+	require("obsidian")
+	vim.api.nvim_command("ObsidianQuickSwitch")
+end, {})

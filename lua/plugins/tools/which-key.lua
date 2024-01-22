@@ -299,7 +299,7 @@ local mappings = {
 		-- t = { '<cmd>Telekasten show_tags<cr>', 'Tags' },
 		-- T = { '<cmd>Telescope live_grep cwd=$NOTES_DIR <cr>', 'Search Notes' },
 		-- n = { '<cmd>Telekasten new_note<cr>', 'New Note' },
-		n = { "<cmd>ObsidianQuickSwitch<cr>", "Switch Notes" },
+		n = { "<cmd>Obsidian<cr>", "Obsidian Notes" },
 		N = { "<cmd>ObsidianNew<cr>", "New Note" },
 		-- N = { "<cmd>execute 'e '.strftime(\"%F\").'.md' <cr>", 'New Note Here' },
 		-- o = { '<cmd>Telekasten switch_vault<cr>', 'Open Vault' },
