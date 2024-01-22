@@ -439,8 +439,8 @@ local no_leader_opts = {
 }
 
 local no_leader_mappings = {
-    ['<S-p>'] = { '<cmd>bprevious<cr>', 'Previous Buffer' },
-    ['<S-n>'] = { '<cmd>bnext<cr>', 'Next Buffer' },
+    ['<S-tab>'] = { '<cmd>bprevious<cr>', 'Previous Buffer' },
+    ['<tab>'] = { '<cmd>bnext<cr>', 'Next Buffer' },
 
     ['<C-h>'] = { '<C-w>h', 'Move Left' },
     ['<C-j>'] = { '<C-w>j', 'Move Down' },
