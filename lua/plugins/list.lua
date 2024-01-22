@@ -243,12 +243,13 @@ return {
 	-- },
 
 	-- Tools
-    {
-        "dhruvmanila/browser-bookmarks.nvim",
-        dependencies = {
-            "nvim-telescope/telescope.nvim",
-        },
-    },
+	{
+		"dhruvmanila/browser-bookmarks.nvim",
+		version = "*",
+		dependencies = {
+			"nvim-telescope/telescope.nvim",
+		},
+	},
 	{
 		"MeanderingProgrammer/harpoon-core.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
@@ -386,7 +387,7 @@ return {
 	},
 	{
 		"folke/which-key.nvim",
-        lazy = true,
+		lazy = true,
 		config = load_config("tools.which-key"),
 		keys = "<leader>",
 	},
@@ -413,7 +414,7 @@ return {
 			"hrsh7th/nvim-cmp",
 		},
 		config = load_config("tools.obsidian"),
-        keys = "<leader>n"
+		keys = "<leader>n",
 	},
 	{
 		"HakonHarnes/img-clip.nvim",
