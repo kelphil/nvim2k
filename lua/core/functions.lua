@@ -68,3 +68,15 @@ vim.api.nvim_create_user_command("Obsidian", function()
 	require("obsidian")
 	vim.api.nvim_command("ObsidianQuickSwitch")
 end, {})
+
+-- MarkdownTODO :: ADD
+vim.api.nvim_create_user_command("MarkdownTODOADD", function()
+   vim.api.nvim_command('s/^/- [ ] TODO: /')
+   vim.api.nvim_command('let @/ = ""')
+end, {})
+
+-- MarkdownTODO :: DONE
+vim.api.nvim_create_user_command("MarkdownTODODONE", function()
+   vim.api.nvim_command("s/^- \\[ \\] TODO: /- [x] TODO: /")
+   vim.api.nvim_command('let @/ = ""')
+end, {})
