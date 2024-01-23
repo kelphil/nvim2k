@@ -233,6 +233,9 @@ return {
 		build = "make install_jsregexp",
 		event = "InsertEnter",
 	},
+    {
+        "onsails/lspkind.nvim",
+    },
 	-- {
 	-- 	"zbirenbaum/copilot.lua",
 	-- 	dependencies = {
