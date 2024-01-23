@@ -286,7 +286,7 @@ local mappings = {
 		c = { "<cmd>Telekasten show_calendar<cr>", "Calendar" },
 		-- d = { '<cmd>vsplit || Telekasten goto_today<cr>', 'Daily' },
 		d = { "<cmd>vsplit || ObsidianToday<cr>", "Daily" },
-		D = { '<cmd>Todos<cr>', 'Pending Todos' },
+		-- D = { '<cmd>Todos<cr>', 'Pending Todos' },
 		-- f = { '<cmd>Telekasten find_notes<cr>', 'Find Notes' },
 		-- g = { '<cmd>Telekasten search_notes<cr>', 'Search String in Notes' },
 		-- G = { '<cmd>Telekasten find_daily_notes<cr>', 'Find Dailies' },
@@ -315,8 +315,12 @@ local mappings = {
 		--     'Sync Notes',
 		-- },
 		-- w = { '<cmd>Telekasten goto_thisweek<cr>', 'Weekly' },
-		t = { '<cmd>MarkdownTODOADD<cr>', 'Add TODO' },
-		T = { '<cmd>MarkdownTODODONE<cr>', 'Mark TODO Complete' },
+		t = {
+            name = "Markdown TODO",
+            a = { '<cmd>MarkdownTODOADD<cr>', 'Add New TODO' },
+            d = { '<cmd>lua require("obsidian").util.toggle_checkbox()<cr>', 'Toggle Checkbox' },
+            t = { '<cmd>TodoTelescope<cr>', 'All Open TODO' },
+        }
 		-- W = { '<cmd>Telekasten find_weekly_notes<cr>', 'Find Weeklies' },
 		-- x = { '<cmd>Telekasten toggle_todo<cr>', 'Toggle Todo' },
 		-- y = { '<cmd>Telekasten yank_notelink<cr>', 'Copy Note Link' },

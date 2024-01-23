@@ -49,12 +49,12 @@ obsidian.setup({
 			opts = { noremap = false, expr = true, buffer = true },
 		},
 		-- Toggle check-boxes.
-		["<leader>ch"] = {
-			action = function()
-				return require("obsidian").util.toggle_checkbox()
-			end,
-			opts = { buffer = true },
-		},
+		-- ["<leader>ch"] = {
+		-- 	action = function()
+		-- 		return require("obsidian").util.toggle_checkbox()
+		-- 	end,
+		-- 	opts = { buffer = true },
+		-- },
 	},
 	-- Optional, customize how names/IDs for new notes are created.
 	note_id_func = function(title)
