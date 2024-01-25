@@ -232,7 +232,7 @@ local mappings = {
 		},
 		r = { "<cmd>Gitsigns reset_hunk<cr>", "Reset Hunk" },
 		R = { "<cmd>Gitsigns reset_buffer<cr>", "Reset Buffer" },
-		s = { "<cmd>Telescope git_status<cr>", "Changed files" },
+		s = { "<cmd>DeltaGitCommits<cr>", "Changed files" },
 		S = { "<cmd>Telescope git_stash<cr>", "Stashed Changes" },
 		t = {
 			name = "Git Toggle",

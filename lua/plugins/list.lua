@@ -403,12 +403,12 @@ return {
 		ft = "markdown",
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview" },
 	},
-	{
-		"renerocksai/telekasten.nvim",
-		dependencies = { "renerocksai/calendar-vim" },
-		config = load_config("tools.telekasten"),
-		cmd = "Telekasten",
-	},
+	-- {
+	-- 	"renerocksai/telekasten.nvim",
+	-- 	dependencies = { "renerocksai/calendar-vim" },
+	-- 	config = load_config("tools.telekasten"),
+	-- 	cmd = "Telekasten",
+	-- },
 	{
 		"epwalsh/obsidian.nvim",
 		version = "*", -- recommended, use latest release instead of latest commit
