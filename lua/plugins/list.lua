@@ -233,9 +233,9 @@ return {
 		build = "make install_jsregexp",
 		event = "InsertEnter",
 	},
-    {
-        "onsails/lspkind.nvim",
-    },
+	{
+		"onsails/lspkind.nvim",
+	},
 	-- {
 	-- 	"zbirenbaum/copilot.lua",
 	-- 	dependencies = {
@@ -249,7 +249,7 @@ return {
 	{
 		"dhruvmanila/browser-bookmarks.nvim",
 		version = "*",
-        build = "git checkout kp",
+		build = "git checkout kp",
 		dependencies = {
 			"nvim-telescope/telescope.nvim",
 		},
@@ -495,8 +495,12 @@ return {
 	},
 	{
 		"pwntester/octo.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+			"nvim-tree/nvim-web-devicons",
+		},
 		config = load_config("tools.octo"),
 		cmd = "Octo",
-		opts = true,
 	},
 }
