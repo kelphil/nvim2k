@@ -249,6 +249,7 @@ return {
 	{
 		"dhruvmanila/browser-bookmarks.nvim",
 		version = "*",
+        build = "git checkout kp",
 		dependencies = {
 			"nvim-telescope/telescope.nvim",
 		},
@@ -492,10 +493,10 @@ return {
 		"tpope/vim-fugitive",
 		cmd = "Git",
 	},
-	-- {
-	-- 	"pwntester/octo.nvim",
-	-- 	config = load_config("tools.octo"),
-	-- 	cmd = "Octo",
-	-- 	opts = true,
-	-- },
+	{
+		"pwntester/octo.nvim",
+		config = load_config("tools.octo"),
+		cmd = "Octo",
+		opts = true,
+	},
 }
