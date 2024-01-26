@@ -159,5 +159,3 @@ lazy.setup({
     },
     state = vim.fn.stdpath('state') .. '/lazy/state.json', -- state info for checker and other things
 })
-
-local delta = require('plugins.tools.delta')
