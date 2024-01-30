@@ -72,6 +72,7 @@ end, {})
 -- MarkdownTODO :: ADD
 vim.api.nvim_create_user_command("MarkdownTODOADD", function()
    vim.api.nvim_command('s/^/- [ ] TODO: /')
+   vim.api.nvim_command("s/$/ (@" .. os.date("%Y-%m-%d", os.time()+1*24*60*60) .. ")")
    vim.api.nvim_command('let @/ = ""')
 end, {})
 
