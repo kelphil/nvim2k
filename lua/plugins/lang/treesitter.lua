@@ -4,6 +4,7 @@ if not status_ok then
 end
 
 local textobjects = require('plugins.lang.textobjects')
+local textobjects = require('plugins.lang.tscontext')
 
 configs.setup({
     ensure_installed = { 'bash', 'c', 'cpp', 'vimdoc', 'lua', 'markdown', 'python', 'javascript', 'json', 'make', 'yaml' }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages

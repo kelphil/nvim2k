@@ -147,6 +147,7 @@ return {
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter-refactor",
 			"nvim-treesitter/nvim-treesitter-textobjects",
+			"nvim-treesitter/nvim-treesitter-context",
 			"RRethy/nvim-treesitter-endwise",
 			"RRethy/nvim-treesitter-textsubjects",
 			"windwp/nvim-ts-autotag",
