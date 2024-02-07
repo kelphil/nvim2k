@@ -318,7 +318,8 @@ local mappings = {
 		t = {
             name = "Markdown TODO",
             a = { '<cmd>MarkdownTODOADD<cr>', 'Add New TODO' },
-            d = { '<cmd>lua require("obsidian").util.toggle_checkbox()<cr>', 'Toggle Checkbox' },
+            d = { '<cmd>MarkdownTODODONE<cr>', 'Mark TODO as DONE' },
+            -- d = { '<cmd>lua require("obsidian").util.toggle_checkbox()<cr>', 'Toggle Checkbox' },
             t = { '<cmd>TodoTelescope<cr>', 'All Open TODO' },
         }
 		-- W = { '<cmd>Telekasten find_weekly_notes<cr>', 'Find Weeklies' },

@@ -78,6 +78,6 @@ end, {})
 
 -- MarkdownTODO :: DONE
 vim.api.nvim_create_user_command("MarkdownTODODONE", function()
-   vim.api.nvim_command("s/- \\[ \\] TODO: /- [x] TODO: /")
+   vim.api.nvim_command("s/- \\[ \\] TODO: /- [x] DONE: /")
    vim.api.nvim_command('let @/ = ""')
 end, {})
