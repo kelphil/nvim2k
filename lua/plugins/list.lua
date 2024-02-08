@@ -97,6 +97,11 @@ return {
 		config = load_config("ui.zen-mode"),
 		cmd = { "ZenMode", "Twilight" },
 	},
+	-- {
+	--        "ellisonleao/glow.nvim",
+	--        config = true,
+	--        cmd = "Glow",
+	--    },
 
 	-- Language
 	-- {
