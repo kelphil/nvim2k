@@ -92,15 +92,27 @@ obsidian.setup({
 	-- telescope.nvim, fzf-lua, fzf.vim, or mini.pick (in that order), and use the
 	-- first one they find. You can set this option to tell obsidian.nvim to always use this
 	-- finder.
-	finder = "telescope.nvim",
+	-- finder = "telescope.nvim",
+	picker = {
+		-- Set your preferred picker. Can be one of 'telescope.nvim', 'fzf-lua', or 'mini.pick'.
+		name = "telescope.nvim",
+		-- Optional, configure key mappings for the picker. These are the defaults.
+		-- Not all pickers support all mappings.
+		mappings = {
+			-- Create a new note from your query.
+			new = "<C-x>",
+			-- Insert a link to the selected note.
+			insert_link = "<C-l>",
+		},
+	},
 
 	-- Optional, configure key mappings for the finder. These are the defaults.
 	-- If you don't want to set any mappings this way then set
-	finder_mappings = {
-		-- Create a new note from your query with `:ObsidianSearch` and `:ObsidianQuickSwitch`.
-		-- Currently only telescope supports this.
-		new = "<C-s>",
-	},
+	-- finder_mappings = {
+	-- Create a new note from your query with `:ObsidianSearch` and `:ObsidianQuickSwitch`.
+	-- Currently only telescope supports this.
+	-- new = "<C-s>",
+	-- },
 
 	-- Optional, sort search results by "path", "modified", "accessed", or "created".
 	-- The recommend value is "modified" and `true` for `sort_reversed`, which means, for example,
