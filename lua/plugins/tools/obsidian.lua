@@ -7,7 +7,7 @@ obsidian.setup({
 	workspaces = {
 		{
 			name = "Notes",
-			-- path = "/home/kephilip/repos/notes",
+			-- path = "/home/kephilip/repos/pkm",
 			path = "/mnt/c/Users/kephilip/OneDrive - Advanced Micro Devices Inc/DOCS/notes",
 		},
 	},
