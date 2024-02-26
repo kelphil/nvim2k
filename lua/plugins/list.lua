@@ -12,11 +12,11 @@ return {
 		lazy = false,
 		priority = 1000,
 	},
-	{
-		"catppuccin/nvim",
-		config = load_config("ui.catppuccin"),
-		lazy = false,
-	},
+	-- {
+	-- 	"catppuccin/nvim",
+	-- 	config = load_config("ui.catppuccin"),
+	-- 	lazy = false,
+	-- },
 	{
 		"folke/tokyonight.nvim",
 		lazy = false,
