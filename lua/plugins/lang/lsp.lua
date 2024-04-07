@@ -8,6 +8,7 @@ require("neodev").setup({})
 local cmp_capabilites = require("cmp_nvim_lsp").default_capabilities()
 local lsp_defaults = lspconfig.util.default_config
 lsp_defaults.capabilities = vim.tbl_deep_extend("force", lsp_defaults.capabilities, cmp_capabilites)
+lsp_defaults.capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = false
 
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("UserLspConfig", {}),
