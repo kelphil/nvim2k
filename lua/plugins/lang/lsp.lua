@@ -61,8 +61,8 @@ require("mason-lspconfig").setup({
 		"rust_analyzer", -- Rust
 		-- 'svelte', -- Svelte
 		-- 'tailwindcss', -- Tailwind
-		"terraformls", -- Terraform
-		"tsserver", -- TypeScript
+		-- "terraformls", -- Terraform
+		-- "tsserver", -- TypeScript
 	},
 	handlers = {
 		default_setup,
