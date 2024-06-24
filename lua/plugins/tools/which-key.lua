@@ -246,6 +246,10 @@ local mappings = {
 		u = { "<cmd>Gitsigns undo_stage_hunk<cr>", "Undo Stage Hunk" },
 		v = { "<cmd>Gitsigns select_hunk<cr>", "Select Hunk" },
 		y = { '<cmd>lua require"gitlinker".get_buf_range_url()<cr>', "Copy Git URL" },
+        w = {
+            l = { '<cmd>Telescope git_worktree git_worktrees<cr>', "List Git Worktrees" },
+            c = { '<cmd>Telescope git_worktree create_git_worktree<cr>', "Create Git Worktree" },
+        }
 	},
 	l = {
 		name = icons.ui.Gear .. "LSP",

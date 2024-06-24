@@ -169,6 +169,7 @@ require('telescope').load_extension('undo')
 require('telescope').load_extension('harpoon-core')
 require('telescope').load_extension('notify')
 require('telescope').load_extension('refactoring')
+require("telescope").load_extension("git_worktree")
 
 
 -- Delta Pager for Git Status

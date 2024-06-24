@@ -252,6 +252,12 @@ return {
 	-- },
 
 	-- Tools
+    {
+        'ThePrimeagen/git-worktree.nvim',
+		dependencies = {
+			"nvim-telescope/telescope.nvim",
+		},
+    },
 	{
 		"dhruvmanila/browser-bookmarks.nvim",
 		version = "*",
