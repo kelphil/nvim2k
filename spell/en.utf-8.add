@@ -264,3 +264,6 @@ py
 testconfig
 testargs
 RDAModule
+progressreport
+rdapickle
+localhost
