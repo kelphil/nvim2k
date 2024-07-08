@@ -211,7 +211,11 @@ return {
 	},
 	{
 		"nvimtools/none-ls.nvim",
-		dependencies = { "neovim/nvim-lspconfig" },
+		dependencies = {
+			"davidmh/cspell.nvim",
+			"nvimtools/none-ls-extras.nvim",
+			"neovim/nvim-lspconfig",
+		},
 		config = load_config("lang.null-ls"),
 		event = "LspAttach",
 	},
@@ -252,12 +256,12 @@ return {
 	-- },
 
 	-- Tools
-    {
-        'ThePrimeagen/git-worktree.nvim',
+	{
+		"ThePrimeagen/git-worktree.nvim",
 		dependencies = {
 			"nvim-telescope/telescope.nvim",
 		},
-    },
+	},
 	{
 		"dhruvmanila/browser-bookmarks.nvim",
 		version = "*",

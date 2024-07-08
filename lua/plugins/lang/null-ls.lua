@@ -8,6 +8,7 @@ local diagnostics = null_ls.builtins.diagnostics
 local hover = null_ls.builtins.hover
 local code_actions = null_ls.builtins.code_actions
 local completion = null_ls.builtins.completion
+local cspell = require('cspell')
 
 -- Buily in sources: https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md
 
@@ -17,30 +18,23 @@ null_ls.setup({
 	log_level = "info",
 	diagnostics_format = "#{c} #{m} (#{s})",
 	sources = {
+        require("none-ls.diagnostics.cpplint"),
+        require("none-ls.formatting.jq"),
+        -- require("none-ls.code_actions.eslint"),
+        -- require("none-ls.diagnostics.eslint_d"),
+        null_ls.builtins.formatting.stylua,
+        -- null_ls.builtins.diagnostics.eslint,
+        null_ls.builtins.completion.spell,
 		code_actions.refactoring,
-		code_actions.shellcheck,
 		completion.spell,
 		completion.tags,
-		diagnostics.shellcheck,
 		formatting.black,
 		formatting.prettier,
 		formatting.shfmt,
 		formatting.stylua,
 		hover.dictionary,
 		hover.printenv,
-		-- diagnostics.cspell.with({
-		--     {
-		--         disabled_filetypes = { "lua" },
-		--         filetypes = { "html", "json", "yaml", "markdown" },
-		--         extra_args = { "--config ~/.cspell.json" },
-		--     },
-		-- }),
-		-- code_actions.cspell.with({
-		--     {
-		--         disabled_filetypes = { 'lua' },
-		--         filetypes = { 'html', 'json', 'yaml', 'markdown' },
-		--         extra_args = { '--config ~/.cspell.json' },
-		--     },
-		-- }),
+        -- cspell.diagnostics,
+        cspell.code_actions,
 	},
 })
