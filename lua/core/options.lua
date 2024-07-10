@@ -56,7 +56,7 @@ local options = {
     wildmode = 'longest:full,full', -- Command-line completion mode
     -- winbar = "%=%m %f",
     winminwidth = 5, -- Minimum window width
-    wrap = false, -- display lines as one long line
+    wrap = true, -- display lines as one long line
     writebackup = false, -- do not edit backups
 }
 
