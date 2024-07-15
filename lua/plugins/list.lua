@@ -47,6 +47,7 @@ return {
 	},
 	{
 		"folke/noice.nvim",
+        config = load_config("ui.noice"),
 		event = "VeryLazy",
 		opts = {
 			-- add any options here
