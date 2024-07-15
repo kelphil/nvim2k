@@ -28,11 +28,11 @@ zen.setup({
       -- statusline will be shown only if 'laststatus' == 3
       laststatus = 0, -- turn off the statusline in zen mode
     },
-    twilight = { enabled = false }, -- enable to start Twilight when zen mode opens
+    twilight = { enabled = true }, -- enable to start Twilight when zen mode opens
     gitsigns = { enabled = false }, -- disables git signs
-    tmux = { enabled = true }, -- disables the tmux statusline
+    tmux = { enabled = false }, -- disables the tmux statusline
     wezterm = {
-      enabled = true,
+      enabled = false,
       font = "+20", -- (10% increase per step)
     },
   },

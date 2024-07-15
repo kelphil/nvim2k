@@ -17,6 +17,7 @@ return {
 	-- 	config = load_config("ui.catppuccin"),
 	-- 	lazy = false,
 	-- },
+    { 'echasnovski/mini.icons', version = false },
 	{
 		"folke/tokyonight.nvim",
 		lazy = false,
@@ -149,14 +150,17 @@ return {
 	-- Tresitter
 	{
 		"nvim-treesitter/nvim-treesitter",
-		build = ":TSUpdate",
+		-- build = ":TSUpdate",
+        build = function()
+            pcall(require('nvim-treesitter.install').update { with_sync = true })
+        end,
 		dependencies = {
-			"nvim-treesitter/nvim-treesitter-refactor",
 			"nvim-treesitter/nvim-treesitter-textobjects",
-			"nvim-treesitter/nvim-treesitter-context",
-			"RRethy/nvim-treesitter-endwise",
-			"RRethy/nvim-treesitter-textsubjects",
-			"windwp/nvim-ts-autotag",
+			-- "nvim-treesitter/nvim-treesitter-refactor",
+			-- "nvim-treesitter/nvim-treesitter-context",
+			-- "RRethy/nvim-treesitter-endwise",
+			-- "RRethy/nvim-treesitter-textsubjects",
+			-- "windwp/nvim-ts-autotag",
 		},
 		config = load_config("lang.treesitter"),
 		event = { "BufReadPre", "BufNewFile" },
@@ -467,6 +471,7 @@ return {
 	},
 
 	-- Telescope
+    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make', cond = vim.fn.executable 'make' == 1 },
 	{
 		"nvim-telescope/telescope.nvim",
 		branch = "0.1.x",
