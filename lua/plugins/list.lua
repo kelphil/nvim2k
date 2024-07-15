@@ -139,12 +139,12 @@ return {
 		"ThePrimeagen/refactoring.nvim",
 		config = load_config("lang.refactoring"),
 	},
-	-- {
-	-- 	"folke/trouble.nvim",
-	-- 	dependencies = "nvim-tree/nvim-web-devicons",
-	-- 	config = load_config("lang.trouble"),
-	--        event = { "BufReadPre" },
-	-- },
+	{
+		"folke/trouble.nvim",
+		dependencies = "nvim-tree/nvim-web-devicons",
+		config = load_config("lang.trouble"),
+        event = { "BufReadPre" },
+	},
 
 	-- Tresitter
 	{
