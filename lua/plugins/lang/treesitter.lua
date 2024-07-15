@@ -1,88 +1,90 @@
-local status_ok, configs = pcall(require, 'nvim-treesitter.configs')
+local status_ok, configs = pcall(require, "nvim-treesitter.configs")
 if not status_ok then
-    return
+	return
 end
 
-local textobjects = require('plugins.lang.textobjects')
-local textobjects = require('plugins.lang.tscontext')
-
 configs.setup({
-    ensure_installed = { 'bash', 'c', 'cpp', 'vimdoc', 'lua', 'markdown', 'python', 'javascript', 'json', 'make', 'yaml' }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-    sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
-    ignore_install = { '' }, -- List of parsers to ignore installing
-    auto_install = true,
+	-- Add languages to be installed here that you want installed for treesitter
+	ensure_installed = {
+		"go",
+		"lua",
+		"python",
+		"rust",
+		"typescript",
+		"regex",
+		"bash",
+		"markdown",
+		"markdown_inline",
+		-- "kdl",
+		"sql",
+		-- "org",
+		"terraform",
+		"html",
+		"css",
+		"javascript",
+		"yaml",
+		"json",
+		"toml",
+	},
 
-    autopairs = {
-        enable = true,
-    },
-
-    endwise = {
-        enable = true,
-    },
-
-    highlight = {
-        enable = true, -- false will disable the whole extension
-        disable = { '' }, -- list of language that will be disabled
-        additional_vim_regex_highlighting = false,
-    },
-    indent = { enable = true },
-
-    context_commentstring = {
-        enable = true,
-        enable_autocmd = false,
-    },
-
-    incremental_selection = {
-        enable = true,
-        keymaps = {
-            init_selection = '<c-space>',
-            node_incremental = '<c-space>',
-            scope_incremental = false,
-            node_decremental = '<bs>',
-        },
-    },
-
-    refactor = {
-        highlight_definitions = {
-            enable = true,
-            -- Set to false if you have an `updatetime` of ~100.
-            clear_on_cursor_move = true,
-        },
-        highlight_current_scope = { enable = true },
-        smart_rename = {
-            enable = true,
-            keymaps = {
-                smart_rename = '<leader>rr',
-            },
-        },
-        navigation = {
-            enable = true,
-            keymaps = {
-                goto_definition = '<leader>rd',
-                list_definitions = '<leader>rl',
-                list_definitions_toc = '<leader>rh',
-                goto_next_usage = '<leader>rj',
-                goto_previous_usage = '<leader>rk',
-            },
-        },
-    },
-
-    autotag = {
-        enable = true,
-    },
-
-    matchup = {
-        enable = true, -- mandatory, false will disable the whole extension
-    },
-
-    textsubjects = {
-        enable = true,
-        prev_selection = ',', -- (Optional) keymap to select the previous selection
-        keymaps = {
-            ['.'] = { 'textsubjects-smart', desc = "Select the current text subject" },
-            ['a;'] = { 'textsubjects-container-outer', desc = "Select outer container (class, function, etc.)" },
-            ['i;'] = { 'textsubjects-container-inner', desc = "Select inside containers (classes, functions, etc.)" },
-        },
-    },
-    textobjects = textobjects,
+	highlight = { enable = true },
+	indent = { enable = true },
+	incremental_selection = {
+		enable = true,
+		keymaps = {
+			init_selection = "<c-space>",
+			node_incremental = "<c-space>",
+			scope_incremental = "<c-s>",
+			node_decremental = "<c-backspace>",
+		},
+	},
+	textobjects = {
+		select = {
+			enable = true,
+			lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
+			keymaps = {
+				-- You can use the capture groups defined in textobjects.scm
+				["aa"] = "@parameter.outer",
+				["ia"] = "@parameter.inner",
+				["af"] = "@function.outer",
+				["if"] = "@function.inner",
+				["ac"] = "@class.outer",
+				["ic"] = "@class.inner",
+				["ii"] = "@conditional.inner",
+				["ai"] = "@conditional.outer",
+				["il"] = "@loop.inner",
+				["al"] = "@loop.outer",
+				["at"] = "@comment.outer",
+			},
+		},
+		move = {
+			enable = true,
+			set_jumps = true, -- whether to set jumps in the jumplist
+			goto_next_start = {
+				["]f"] = "@function.outer",
+				["]]"] = "@class.outer",
+			},
+			goto_next_end = {
+				["]F"] = "@function.outer",
+				["]["] = "@class.outer",
+			},
+			goto_previous_start = {
+				["[f"] = "@function.outer",
+				["[["] = "@class.outer",
+			},
+			goto_previous_end = {
+				["[F"] = "@function.outer",
+				["[]"] = "@class.outer",
+			},
+		},
+		swap = {
+			enable = true,
+			swap_next = {
+				["<leader>a"] = "@parameter.inner",
+			},
+			swap_previous = {
+				["<leader>A"] = "@parameter.inner",
+			},
+		},
+	},
 })

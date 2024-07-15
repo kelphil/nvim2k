@@ -77,6 +77,12 @@ require("mason-lspconfig").setup({
 					Lua = {
 						workspace = { checkThirdParty = false },
 						telemetry = { enable = false },
+						diagnostics = {
+							globals = { "vim" },
+							-- undefined_global = false, -- remove this from diag!
+							-- missing_parameters = false, -- missing fields :)
+                            disable = {"missing-parameters", "missing-fields"}
+						},
 					},
 				},
 			})
