@@ -193,11 +193,11 @@ return {
 		config = load_config("lang.lspsaga"),
 		event = "LspAttach",
 	},
-	{
-		"Maan2003/lsp_lines.nvim",
-		config = load_config("lang.lsp-lines"),
-		event = "LspAttach",
-	},
+	-- {
+	-- 	"Maan2003/lsp_lines.nvim",
+	-- 	config = load_config("lang.lsp-lines"),
+	-- 	event = "LspAttach",
+	-- },
 	{
 		"williamboman/mason.nvim",
 		opts = {
