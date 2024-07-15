@@ -321,3 +321,10 @@ SDL
 PoR
 PEO
 NAVI
+addr
+LANE0
+PASSTHROUGH
+backends
+FTDI
+FlexibleTrace
+DevOps
