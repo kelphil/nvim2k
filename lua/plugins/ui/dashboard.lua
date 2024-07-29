@@ -31,7 +31,7 @@ dashboard.setup({
                 key = 'p',
             },
             {
-                desc = icons.ui.NeoVim .. 'Config',
+                desc = icons.ui.Neovim .. 'Config',
                 group = '@property',
                 action = 'e ~/.config/nvim/lua/plugins/list.lua',
                 key = 'c',

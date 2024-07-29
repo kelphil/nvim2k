@@ -251,14 +251,38 @@ return {
 	{
 		"onsails/lspkind.nvim",
 	},
-	-- {
-	-- 	"zbirenbaum/copilot.lua",
-	-- 	dependencies = {
-	-- 		"zbirenbaum/copilot-cmp",
-	-- 	},
-	-- 	config = load_config("lang.copilot"),
-	-- 	event = "InsertEnter",
-	-- },
+	{
+		"zbirenbaum/copilot.lua",
+		dependencies = {
+			"zbirenbaum/copilot-cmp",
+		},
+		config = load_config("lang.copilot"),
+		event = "InsertEnter",
+	},
+    {
+        'CopilotC-Nvim/CopilotChat.nvim',
+        branch = 'canary',
+        dependencies = {
+            { 'zbirenbaum/copilot.lua' },
+            { 'nvim-lua/plenary.nvim' },
+        },
+        cmd = {
+            'CopilotChat',
+            'CopilotChatToggle',
+            'CopilotChatDocs',
+            'CopilotChatExplain',
+            'CopilotChatFix',
+            'CopilotChatFixDiagnostic',
+            'CopilotChatCommit',
+            'CopilotChatCommitStaged',
+            'CopilotChatLoad',
+            'CopilotChatOptimize',
+            'CopilotChatReview',
+            'CopilotChatSave',
+            'CopilotChatTests',
+        },
+        config = load_config('lang.copilot-chat'),
+    },
 
 	-- Tools
 	{
@@ -412,9 +436,8 @@ return {
 	},
 	{
 		"folke/which-key.nvim",
-		lazy = true,
 		config = load_config("tools.which-key"),
-		keys = "<leader>",
+        event = 'VeryLazy'
 	},
 	{
 		"iamcco/markdown-preview.nvim",
