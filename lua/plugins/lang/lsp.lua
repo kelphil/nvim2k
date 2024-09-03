@@ -3,8 +3,6 @@ if not status_ok then
 	return
 end
 
-require("neodev").setup({})
-
 local cmp_capabilites = require("cmp_nvim_lsp").default_capabilities()
 local lsp_defaults = lspconfig.util.default_config
 lsp_defaults.capabilities = vim.tbl_deep_extend("force", lsp_defaults.capabilities, cmp_capabilites)
