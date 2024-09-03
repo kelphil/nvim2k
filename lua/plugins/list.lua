@@ -512,6 +512,12 @@ return {
 		dependencies = { "stevearc/dressing.nvim" },
 		cmd = "Nerdy",
 	},
+    {
+        -- 'chentoast/marks.nvim',
+        '2kabhishek/markit.nvim',
+        config = load_config('tools.marks'),
+        event = { 'BufReadPre', 'BufNewFile' },
+    },
 
 	-- Git
 	-- {
