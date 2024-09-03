@@ -298,6 +298,7 @@ return {
 		dependencies = {
 			"nvim-telescope/telescope.nvim",
 		},
+        config = load_config('tools.bookmarks'),
 	},
 	{
 		"MeanderingProgrammer/harpoon-core.nvim",
