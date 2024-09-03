@@ -4,9 +4,6 @@ if not status_ok then
 end
 
 bookmarks.setup({
-	-- Below options added directly to the config file in userpath
-	-- /home/kephilip/.local/share/nvim/lazy/browser-bookmarks.nvim/lua/browser_bookmarks/config.lua
-	-- The opts table below is not getting read/applied
     selected_browser = "brave",
     profile_name = "Work",
     config_dir = "/mnt/c/Users/kephilip/AppData/Local/BraveSoftware/Brave-Browser/User Data/",
