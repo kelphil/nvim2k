@@ -17,7 +17,7 @@ return {
 	-- 	config = load_config("ui.catppuccin"),
 	-- 	lazy = false,
 	-- },
-    { 'echasnovski/mini.icons', version = false },
+	{ "echasnovski/mini.icons", version = false },
 	{
 		"folke/tokyonight.nvim",
 		lazy = false,
@@ -48,7 +48,7 @@ return {
 	},
 	{
 		"folke/noice.nvim",
-        config = load_config("ui.noice"),
+		config = load_config("ui.noice"),
 		event = "VeryLazy",
 		opts = {
 			-- add any options here
@@ -123,9 +123,10 @@ return {
 	{
 		"nvim-neotest/neotest",
 		dependencies = {
-			"antoinemadec/FixCursorHold.nvim",
+			"nvim-neotest/nvim-nio",
 			"olimorris/neotest-rspec",
 			"haydenmeade/neotest-jest",
+			"nvim-neotest/neotest-python",
 		},
 		config = load_config("lang.neotest"),
 		cmd = "Neotest",
@@ -144,27 +145,23 @@ return {
 		"folke/trouble.nvim",
 		dependencies = "nvim-tree/nvim-web-devicons",
 		config = load_config("lang.trouble"),
-        event = { "BufReadPre" },
+		event = { "BufReadPre" },
 	},
 
 	-- Tresitter
-	{
-		"nvim-treesitter/nvim-treesitter",
-		-- build = ":TSUpdate",
-        build = function()
-            pcall(require('nvim-treesitter.install').update { with_sync = true })
-        end,
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter-textobjects",
-			-- "nvim-treesitter/nvim-treesitter-refactor",
-			-- "nvim-treesitter/nvim-treesitter-context",
-			-- "RRethy/nvim-treesitter-endwise",
-			-- "RRethy/nvim-treesitter-textsubjects",
-			-- "windwp/nvim-ts-autotag",
-		},
-		config = load_config("lang.treesitter"),
-		event = { "BufReadPre", "BufNewFile" },
-	},
+    {
+        'nvim-treesitter/nvim-treesitter',
+        build = ':TSUpdate',
+        dependencies = {
+            'nvim-treesitter/nvim-treesitter-refactor',
+            'nvim-treesitter/nvim-treesitter-textobjects',
+            'RRethy/nvim-treesitter-endwise',
+            'RRethy/nvim-treesitter-textsubjects',
+            'windwp/nvim-ts-autotag',
+        },
+        config = load_config('lang.treesitter'),
+        event = { 'BufReadPre', 'BufNewFile' },
+    },
 
 	-- LSP
 	{
@@ -179,19 +176,23 @@ return {
 		config = load_config("lang.lsp"),
 		event = { "BufReadPre", "BufNewFile" },
 	},
-	{
-		"VonHeikemen/lsp-zero.nvim",
-		branch = "v3.x",
-		dependencies = {
-			"folke/neodev.nvim",
-		},
-		config = load_config("lang.lsp-zero"),
-	},
-	{
-		"folke/neodev.nvim",
-		ft = { "lua", "vim" },
-		config = load_config("lang.neodev"),
-	},
+	-- {
+	-- 	"VonHeikemen/lsp-zero.nvim",
+	-- 	branch = "v3.x",
+	-- 	dependencies = {
+	-- 		"folke/neodev.nvim",
+	-- 	},
+	-- 	config = load_config("lang.lsp-zero"),
+	-- },
+    {
+        'folke/lazydev.nvim',
+        ft = 'lua',
+    },
+	-- {
+	-- 	"folke/neodev.nvim",
+	-- 	ft = { "lua", "vim" },
+	-- 	config = load_config("lang.neodev"),
+	-- },
 	{
 		"nvimdev/lspsaga.nvim",
 		config = load_config("lang.lspsaga"),
@@ -228,10 +229,10 @@ return {
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-cmdline",
 			"hrsh7th/cmp-nvim-lsp",
-			"hrsh7th/cmp-nvim-lsp-signature-help",
 			"hrsh7th/cmp-nvim-lua",
-			"saadparwaiz1/cmp_luasnip",
-			"rafamadriz/friendly-snippets",
+            'L3MON4D3/LuaSnip',
+            'rafamadriz/friendly-snippets',
+            'saadparwaiz1/cmp_luasnip',
 		},
 		config = load_config("lang.cmp"),
 		event = "InsertEnter",
@@ -254,30 +255,30 @@ return {
 		config = load_config("lang.copilot"),
 		event = "InsertEnter",
 	},
-    {
-        'CopilotC-Nvim/CopilotChat.nvim',
-        branch = 'canary',
-        dependencies = {
-            { 'zbirenbaum/copilot.lua' },
-            { 'nvim-lua/plenary.nvim' },
-        },
-        cmd = {
-            'CopilotChat',
-            'CopilotChatToggle',
-            'CopilotChatDocs',
-            'CopilotChatExplain',
-            'CopilotChatFix',
-            'CopilotChatFixDiagnostic',
-            'CopilotChatCommit',
-            'CopilotChatCommitStaged',
-            'CopilotChatLoad',
-            'CopilotChatOptimize',
-            'CopilotChatReview',
-            'CopilotChatSave',
-            'CopilotChatTests',
-        },
-        config = load_config('lang.copilot-chat'),
-    },
+	{
+		"CopilotC-Nvim/CopilotChat.nvim",
+		branch = "canary",
+		dependencies = {
+			{ "zbirenbaum/copilot.lua" },
+			{ "nvim-lua/plenary.nvim" },
+		},
+		cmd = {
+			"CopilotChat",
+			"CopilotChatToggle",
+			"CopilotChatDocs",
+			"CopilotChatExplain",
+			"CopilotChatFix",
+			"CopilotChatFixDiagnostic",
+			"CopilotChatCommit",
+			"CopilotChatCommitStaged",
+			"CopilotChatLoad",
+			"CopilotChatOptimize",
+			"CopilotChatReview",
+			"CopilotChatSave",
+			"CopilotChatTests",
+		},
+		config = load_config("lang.copilot-chat"),
+	},
 
 	-- Tools
 	{
@@ -293,7 +294,7 @@ return {
 		dependencies = {
 			"nvim-telescope/telescope.nvim",
 		},
-        config = load_config('tools.bookmarks'),
+		config = load_config("tools.bookmarks"),
 	},
 	{
 		"MeanderingProgrammer/harpoon-core.nvim",
@@ -408,6 +409,15 @@ return {
 			},
 		},
 	},
+    {
+        'numToStr/Navigator.nvim',
+        config = load_config('tools.navigator'),
+        event = function()
+            if vim.fn.exists('$TMUX') == 1 then
+                return 'VeryLazy'
+            end
+        end,
+    },
 	{
 		"aserowy/tmux.nvim",
 		config = load_config("tools.tmux"),
@@ -433,7 +443,7 @@ return {
 	{
 		"folke/which-key.nvim",
 		config = load_config("tools.which-key"),
-        event = 'VeryLazy'
+		event = "VeryLazy",
 	},
 	{
 		"iamcco/markdown-preview.nvim",
@@ -490,7 +500,7 @@ return {
 	},
 
 	-- Telescope
-    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make', cond = vim.fn.executable 'make' == 1 },
+	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make", cond = vim.fn.executable("make") == 1 },
 	{
 		"nvim-telescope/telescope.nvim",
 		branch = "0.1.x",
@@ -512,12 +522,12 @@ return {
 		dependencies = { "stevearc/dressing.nvim" },
 		cmd = "Nerdy",
 	},
-    {
-        -- 'chentoast/marks.nvim',
-        '2kabhishek/markit.nvim',
-        config = load_config('tools.marks'),
-        event = { 'BufReadPre', 'BufNewFile' },
-    },
+	{
+		-- 'chentoast/marks.nvim',
+		"2kabhishek/markit.nvim",
+		config = load_config("tools.marks"),
+		event = { "BufReadPre", "BufNewFile" },
+	},
 
 	-- Git
 	-- {
