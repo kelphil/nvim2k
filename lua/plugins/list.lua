@@ -149,19 +149,19 @@ return {
 	},
 
 	-- Tresitter
-    {
-        'nvim-treesitter/nvim-treesitter',
-        build = ':TSUpdate',
-        dependencies = {
-            'nvim-treesitter/nvim-treesitter-refactor',
-            'nvim-treesitter/nvim-treesitter-textobjects',
-            'RRethy/nvim-treesitter-endwise',
-            'RRethy/nvim-treesitter-textsubjects',
-            'windwp/nvim-ts-autotag',
-        },
-        config = load_config('lang.treesitter'),
-        event = { 'BufReadPre', 'BufNewFile' },
-    },
+	{
+		"nvim-treesitter/nvim-treesitter",
+		build = ":TSUpdate",
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter-refactor",
+			"nvim-treesitter/nvim-treesitter-textobjects",
+			"RRethy/nvim-treesitter-endwise",
+			"RRethy/nvim-treesitter-textsubjects",
+			"windwp/nvim-ts-autotag",
+		},
+		config = load_config("lang.treesitter"),
+		event = { "BufReadPre", "BufNewFile" },
+	},
 
 	-- LSP
 	{
@@ -184,10 +184,10 @@ return {
 	-- 	},
 	-- 	config = load_config("lang.lsp-zero"),
 	-- },
-    {
-        'folke/lazydev.nvim',
-        ft = 'lua',
-    },
+	{
+		"folke/lazydev.nvim",
+		ft = "lua",
+	},
 	-- {
 	-- 	"folke/neodev.nvim",
 	-- 	ft = { "lua", "vim" },
@@ -230,9 +230,9 @@ return {
 			"hrsh7th/cmp-cmdline",
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-nvim-lua",
-            'L3MON4D3/LuaSnip',
-            'rafamadriz/friendly-snippets',
-            'saadparwaiz1/cmp_luasnip',
+			"L3MON4D3/LuaSnip",
+			"rafamadriz/friendly-snippets",
+			"saadparwaiz1/cmp_luasnip",
 		},
 		config = load_config("lang.cmp"),
 		event = "InsertEnter",
@@ -409,15 +409,15 @@ return {
 			},
 		},
 	},
-    {
-        'numToStr/Navigator.nvim',
-        config = load_config('tools.navigator'),
-        event = function()
-            if vim.fn.exists('$TMUX') == 1 then
-                return 'VeryLazy'
-            end
-        end,
-    },
+	{
+		"numToStr/Navigator.nvim",
+		config = load_config("tools.navigator"),
+		event = function()
+			if vim.fn.exists("$TMUX") == 1 then
+				return "VeryLazy"
+			end
+		end,
+	},
 	{
 		"aserowy/tmux.nvim",
 		config = load_config("tools.tmux"),
@@ -459,6 +459,15 @@ return {
 	-- 	config = load_config("tools.telekasten"),
 	-- 	cmd = "Telekasten",
 	-- },
+	{
+		"MeanderingProgrammer/render-markdown.nvim",
+		opts = {},
+		-- dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
+		dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.icons" }, -- if you use standalone mini plugins
+		-- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+		config = load_config("tools.markdown"),
+		ft = "markdown",
+	},
 	{
 		"epwalsh/obsidian.nvim",
 		version = "*", -- recommended, use latest release instead of latest commit
