@@ -24,6 +24,12 @@ return {
         priority = 1000,
         opts = {},
     },
+    -- {
+    --     "echasnovski/mini.files",
+    --     version = '*',
+    --     config = load_config("ui.mini-files"),
+    --     lazy = false,
+    -- },
     {
         "nvim-lualine/lualine.nvim",
         config = load_config("ui.lualine"),
