@@ -295,7 +295,9 @@ return {
 	},
 	{
 		"yetone/avante.nvim",
-        ft = { "python" },
+        -- ft = { "python" },
+        event = "VeryLazy",
+        lazy = false,
 		version = false, -- set this if you want to always pull the latest change
 		opts = {
 			-- add any opts here
@@ -336,7 +338,8 @@ return {
 				ft = { "markdown", "Avante" },
 			},
 		},
-	},
+		config = load_config("lang.avante"),
+    },
 
 	-- Tools
 	{
