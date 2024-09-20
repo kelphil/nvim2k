@@ -441,3 +441,7 @@ ePROM
 NorthBridge
 PSP
 CLK
+LLM
+FCR
+GFXIPARCH
+zpass
