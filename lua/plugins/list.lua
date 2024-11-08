@@ -47,11 +47,11 @@ return {
         -- main = "ibl",
         -- event = { 'BufReadPre', 'BufNewFile' },
     },
-    {
-        "HiPhish/rainbow-delimiters.nvim",
-        config = load_config("ui.rainbow"),
-        event = { "BufReadPre", "BufNewFile" },
-    },
+    -- {
+    --     "HiPhish/rainbow-delimiters.nvim",
+    --     config = load_config("ui.rainbow"),
+    --     event = { "BufReadPre", "BufNewFile" },
+    -- },
     {
         "rcarriga/nvim-notify",
         config = load_config("ui.notify"),
