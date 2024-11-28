@@ -225,6 +225,7 @@ return {
                 "mypy",
                 -- "ruff",
                 "pyright",
+                "typescript-language-server",
             },
         },
         config = load_config("lang.mason"),

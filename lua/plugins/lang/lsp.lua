@@ -58,7 +58,7 @@ require("mason-lspconfig").setup({
 		"pyright", -- Python
 		"rust_analyzer", -- Rust
 		-- 'svelte', -- Svelte
-		-- 'tailwindcss', -- Tailwind
+		'tailwindcss', -- Tailwind
 		-- "terraformls", -- Terraform
 		-- "tsserver", -- TypeScript
 	},
