@@ -5,12 +5,12 @@ local function load_config(package)
 end
 
 return {
-    -- UI
+    -- ui
     -- {
     --     "3rd/image.nvim",
     --     -- dependencies = { "luarocks.nvim" },
     --     config = load_config("ui.image"),
-    --     event = { "BufReadPre", "BufNewFile" },
+    --     event = { "bufreadpre", "bufnewfile" },
     -- },
     {
         "navarasu/onedark.nvim",
@@ -39,82 +39,82 @@ return {
     {
         "nvim-lualine/lualine.nvim",
         config = load_config("ui.lualine"),
-        event = { "BufReadPre", "BufNewFile" },
-    },
-    {
-        "lukas-reineke/indent-blankline.nvim",
-        config = load_config("ui.indentline"),
-        -- main = "ibl",
-        -- event = { 'BufReadPre', 'BufNewFile' },
+        event = { "bufreadpre", "bufnewfile" },
     },
     -- {
-    --     "HiPhish/rainbow-delimiters.nvim",
+    --     "lukas-reineke/indent-blankline.nvim",
+    --     config = load_config("ui.indentline"),
+    --     -- main = "ibl",
+    --     -- event = { 'bufreadpre', 'bufnewfile' },
+    -- },
+    -- {
+    --     "hiphish/rainbow-delimiters.nvim",
     --     config = load_config("ui.rainbow"),
-    --     event = { "BufReadPre", "BufNewFile" },
+    --     event = { "bufreadpre", "bufnewfile" },
     -- },
     {
         "rcarriga/nvim-notify",
         config = load_config("ui.notify"),
-        event = "VeryLazy",
+        -- event = "verylazy",
         cmd = "Notifications",
     },
-    {
-        "folke/noice.nvim",
-        config = load_config("ui.noice"),
-        event = "VeryLazy",
-        opts = {
-            -- add any options here
-        },
-        dependencies = {
-            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-            "MunifTanjim/nui.nvim",
-            -- OPTIONAL:
-            --   `nvim-notify` is only needed, if you want to use the notification view.
-            --   If not available, we use `mini` as the fallback
-            "rcarriga/nvim-notify",
-        },
-    },
-    {
-        "stevearc/dressing.nvim",
-        config = load_config("ui.dressing"),
-        event = { "BufReadPre", "BufNewFile" },
-    },
-    {
-        "uga-rosa/ccc.nvim",
-        cmd = { "CccHighlighterToggle", "CccConvert", "CccPick" },
-    },
-    {
-        "nvimdev/dashboard-nvim",
-        config = load_config("ui.dashboard"),
-        -- Only load when no arguments
-        event = function()
-            if vim.fn.argc() == 0 then
-                return "VimEnter"
-            end
-        end,
-        cmd = "Dashboard",
-    },
-    {
-        "gelguy/wilder.nvim",
-        build = function()
-            vim.cmd([[silent UpdateRemotePlugins]])
-        end,
-        config = load_config("ui.wilder"),
-        keys = { "?" },
-    },
-    {
-        "folke/zen-mode.nvim",
-        dependencies = {
-            "folke/twilight.nvim",
-            config = load_config("ui.twilight"),
-        },
-        config = load_config("ui.zen-mode"),
-        cmd = { "ZenMode", "Twilight" },
-    },
+    -- {
+    --     "folke/noice.nvim",
+    --     config = load_config("ui.noice"),
+    --     event = "verylazy",
+    --     opts = {
+    --         -- add any options here
+    --     },
+    --     dependencies = {
+    --         -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+    --         "muniftanjim/nui.nvim",
+    --         -- optional:
+    --         --   `nvim-notify` is only needed, if you want to use the notification view.
+    --         --   if not available, we use `mini` as the fallback
+    --         "rcarriga/nvim-notify",
+    --     },
+    -- },
+    -- {
+    --     "stevearc/dressing.nvim",
+    --     config = load_config("ui.dressing"),
+    --     event = { "bufreadpre", "bufnewfile" },
+    -- },
+    -- {
+    --     "uga-rosa/ccc.nvim",
+    --     cmd = { "ccchighlightertoggle", "cccconvert", "cccpick" },
+    -- },
+    -- {
+    --     "nvimdev/dashboard-nvim",
+    --     config = load_config("ui.dashboard"),
+    --     -- only load when no arguments
+    --     event = function()
+    --         if vim.fn.argc() == 0 then
+    --             return "vimenter"
+    --         end
+    --     end,
+    --     cmd = "dashboard",
+    -- },
+    -- {
+    --     "gelguy/wilder.nvim",
+    --     build = function()
+    --         vim.cmd([[silent updateremoteplugins]])
+    --     end,
+    --     config = load_config("ui.wilder"),
+    --     keys = { "?" },
+    -- },
+    -- {
+    --     "folke/zen-mode.nvim",
+    --     dependencies = {
+    --         "folke/twilight.nvim",
+    --         config = load_config("ui.twilight"),
+    --     },
+    --     config = load_config("ui.zen-mode"),
+    --     cmd = { "zenmode", "twilight" },
+    -- },
     -- {
     --        "ellisonleao/glow.nvim",
     --        config = true,
-    --        cmd = "Glow",
+    --        cmd = "glow",
     --    },
 
     -- Language
@@ -444,52 +444,52 @@ return {
         config = load_config("tools.tabout"),
         event = "InsertEnter",
     },
-    {
-        "folke/flash.nvim",
-        config = load_config("tools.flash"),
-        keys = {
-            {
-                "s",
-                mode = { "n", "x", "o" },
-                function()
-                    require("flash").jump()
-                end,
-                desc = "Flash",
-            },
-            {
-                "S",
-                mode = { "n", "x", "o" },
-                function()
-                    require("flash").treesitter()
-                end,
-                desc = "Flash Treesitter",
-            },
-            {
-                "r",
-                mode = "o",
-                function()
-                    require("flash").remote()
-                end,
-                desc = "Remote Flash",
-            },
-            {
-                "R",
-                mode = { "o", "x" },
-                function()
-                    require("flash").treesitter_search()
-                end,
-                desc = "Treesitter Search",
-            },
-            {
-                "<c-s>",
-                mode = { "c" },
-                function()
-                    require("flash").toggle()
-                end,
-                desc = "Toggle Flash Search",
-            },
-        },
-    },
+    -- {
+    --     "folke/flash.nvim",
+    --     config = load_config("tools.flash"),
+    --     keys = {
+    --         {
+    --             "s",
+    --             mode = { "n", "x", "o" },
+    --             function()
+    --                 require("flash").jump()
+    --             end,
+    --             desc = "Flash",
+    --         },
+    --         {
+    --             "S",
+    --             mode = { "n", "x", "o" },
+    --             function()
+    --                 require("flash").treesitter()
+    --             end,
+    --             desc = "Flash Treesitter",
+    --         },
+    --         {
+    --             "r",
+    --             mode = "o",
+    --             function()
+    --                 require("flash").remote()
+    --             end,
+    --             desc = "Remote Flash",
+    --         },
+    --         {
+    --             "R",
+    --             mode = { "o", "x" },
+    --             function()
+    --                 require("flash").treesitter_search()
+    --             end,
+    --             desc = "Treesitter Search",
+    --         },
+    --         {
+    --             "<c-s>",
+    --             mode = { "c" },
+    --             function()
+    --                 require("flash").toggle()
+    --             end,
+    --             desc = "Toggle Flash Search",
+    --         },
+    --     },
+    -- },
     {
         "numToStr/Navigator.nvim",
         config = load_config("tools.navigator"),
@@ -594,6 +594,50 @@ return {
         cmd = { "ToggleTerm", "LazygitToggle", "NodeToggle", "PythonToggle", "RubyToggle", "ElixirToggle" },
     },
 
+    -- Snacks Picker
+    {
+        "folke/snacks.nvim",
+        priority = 1000,
+        lazy = false,
+        ---@type snacks.Config
+        opts = {
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
+            -- bigfile = { enabled = true },
+            dashboard = { enabled = true },
+            indent = { enabled = true },
+            input = { enabled = true },
+            picker = {
+                enabled = true,
+                prompt = " ",
+                -- pass your desired search as a static pattern
+                -- search = "^\\s*- \\[ \\]",
+                -- we enable regex so the pattern is interpreted as a regex
+                -- regex = true,
+                -- no “live grep” needed here since we have a fixed pattern
+                -- live = false,
+                -- restrict search to the current working directory
+                dirs = { vim.fn.getcwd() },
+                -- include files ignored by .gitignore
+                args = { "--no-ignore" },
+                -- Start in normal mode
+                -- on_show = function()
+                --     vim.cmd.stopinsert()
+                -- end,
+                -- finder = "grep",
+                format = "file",
+                show_empty = true,
+                -- supports_live = false,
+                layout = "ivy",
+            },
+            notifier = { enabled = true },
+            quickfile = { enabled = true },
+            scroll = { enabled = true },
+            statuscolumn = { enabled = true },
+            words = { enabled = true },
+        },
+    },
     -- Telescope
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make", cond = vim.fn.executable("make") == 1 },
     {
@@ -612,11 +656,11 @@ return {
         config = load_config("tools.telescope"),
         cmd = "Telescope",
     },
-    {
-        "2kabhishek/nerdy.nvim",
-        dependencies = { "stevearc/dressing.nvim" },
-        cmd = "Nerdy",
-    },
+    -- {
+    --     "2kabhishek/nerdy.nvim",
+    --     dependencies = { "stevearc/dressing.nvim" },
+    --     cmd = "Nerdy",
+    -- },
     {
         -- 'chentoast/marks.nvim',
         "2kabhishek/markit.nvim",
